@@ -2,6 +2,35 @@
 // Arrays of questions and optional answers//
 const questions = [
     {
+        question: "Which is the smallest continent in the world?",
+        answers: [
+            { text: "Asia", correct: false},
+            { text: "Australia", correct: true},
+            { text: "Arctic", correct: false},
+            { text: "Africa", correct: false},
+        ]
+    },
+    {
+        question: "Which is the largest desert in the world?",
+        answers: [
+            { text: "Kalahari", correct: false },
+            { text: "Gobi", correct: false },
+            { text: "Sahara", correct: false },
+            { text: "Antartica", correct: true },
+        ]
+    },
+
+    {
+        question: "Which is the largest animal ?",
+        answers: [
+            { text: "Shark", correct: false },
+            { text: "Blue Whale", correct: true },
+            { text: "Elephant", correct: false },
+            { text: "Giraffe", correct: false },
+        ]
+    },
+
+    {
         question: "What is 176 - 18 ?",
         answers: [
             { text: "158", correct: true },
