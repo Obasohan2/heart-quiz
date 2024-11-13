@@ -68,3 +68,65 @@ const questions = [
     },
 ]
 
+// declaring variable element
+const questionElement = document.getElementById("question");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+
+//chnages in scores while answering the quiz questions
+let currentQuestionIndex = 0;
+let score = 0;
+
+
+// start quiz with question index zero and score zero
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+
+    // code to click on the next button to call show question.
+    nextButton.innerHTML = "Next";
+    showQuestion();
+}
+
+//code to show the questions element index 
+function showQuestion() {
+    resetState();
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + "." + currentQuestion.question;
+
+    // code to display the answers 
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+
+        //select answer button
+        button.addEventListener("click", selectAnswwer);
+    })
+}
+
+function resetState() {
+    nextButton.style.display = "none";
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
+
+//click on the chosen answer button which will optionally respond
+function selectAnswwer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if (isCorrect) {
+        selectedBtn.classList.add("correct");
+        score++;
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+}
+
+startQuiz();
