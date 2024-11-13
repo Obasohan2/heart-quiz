@@ -32,16 +32,16 @@ const questions = [
     {
         question: "Who is a known singer ?",
         answers: [
-           
+
             { text: "Mohammed Salah", correct: false },
             { text: "Alex Ferguson", correct: false },
             { text: "Alan Shearer", correct: false },
-            { text: "Bayonce", correct: true },
+            { text: "Michael Jackson", correct: true },
         ]
     },
     {
         question: "What is the name of UK currency ?",
-        answers: [        
+        answers: [
             { text: "Dollar", correct: false },
             { text: "Naira", correct: false },
             { text: "Pounds Sterling", correct: true },
@@ -123,10 +123,53 @@ function selectAnswwer(e) {
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
         selectedBtn.classList.add("correct");
+
+        //score increases when click on correct answer
         score++;
     } else {
         selectedBtn.classList.add("incorrect");
     }
+
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+
+        //disable click after selecting choiced answer
+        button.disabled = true;
+    })
+
+    //display of next button to the next question after user's choiced answer.
+    nextButton.style.display = "block";
 }
 
+//diaply the score 
+function showScore() {
+    resetState();
+
+    //using the "backtick" to avoid javascript interpretation as string
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
+}
+
+//code to move into next question and if no more question, show the score.
+function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+};
+
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
+        handleNextButton();
+    } else {
+        startQuiz();
+    }
+});
+
+//show quiz game questions
 startQuiz();

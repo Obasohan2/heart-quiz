@@ -1,5 +1,3 @@
-
-
 /*----body-----*/
 * {
     margin: 0;
@@ -8,7 +6,7 @@
     box-sizing: border-box;
 }
 
-/*----body background color-----*/
+/*----background color-----*/
 body {
     background: skyblue;
 }
@@ -39,67 +37,80 @@ body {
     margin-right: auto;
     padding: 5%;
     border-radius: 5px;
-    box-shadow: 0 0 10px 2px;
-    }
+    box-shadow: 0 0 15px 5px;
+}
 
-    /*----app container head-----*/
-    .app h1 {
-        font-size: 25px;
-        color: #001e4d;
-        font-weight: 600;
-        border-bottom: 1px solid #333;
-        padding-bottom: 30px;   
-        position: relative;
-        top: -25px; 
-    }
+/*----app container head-----*/
+.app h1 {
+    font-size: 2rem;
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 25px;
+    position: relative;
+    top: -20px;
+}
 
-    /*----quiz game area-----*/
-    .quiz {
-        padding: 10px 0;
-    }
-    
-    /*----quiz question head-----*/
-    .quiz h2 {
-        font-weight: 18px;
-        color: #001e4d;
-        font-weight: 600;
-        font-size: 2rem;
-    }
+/*----quiz game area-----*/
+.quiz {
+    padding: 10px 0;
+}
 
-    /*----answers button styling-----*/
-    .btn {
-        background: #fff;
-        color: #222;
-        font-weight: 500;
-        font-size: 20px;
-        width: 100%;
-        border: 1px solid #222;
-        padding: 5px 15px;
-        margin: 10px 0;
-        text-align: left;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
+/*----quiz question head-----*/
+.quiz h2 {
+    font-weight: 18px;
+    color: #001e4d;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
 
-    /*----answers button hover style-----*/
-    .btn:hover {
-        background: #2222;
-        color: #fff;
-    }
+/*----answers button styling-----*/
+.btn {
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    font-size: 20px;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 5px 15px;
+    margin: 5px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
 
-    /*----next button styling-----*/
-    #next-btn {
-        background: #001e4d;
-        color: #fff;
-        font-weight: 500;
-        width: 150px;
-        border: 0;
-        padding: 10px;
-        margin: 20px auto 0;
-        border-radius: 4px;
-        cursor: pointer;
-        
-         /**button value is none to make it hidden***/
-        display: none;
-    }
+/*----answers button hover style and hidden after -----*/
+.btn:hover:not([disabled]) {
+    background: #2222;
+    color: #fff;
+}
+
+.btn:disabled {
+    cursor: no-drop;
+}
+
+/*----next button styling-----*/
+#next-btn {
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 15px;
+    margin: 15px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+
+    /**button value is none to make it hidden***/
+    display: none;
+}
+
+/**styling the response of correct and incorrect answers***/
+.correct {
+    background: #9aeabc;
+}
+
+.incorrect {
+    background: #ff9393;
+}
