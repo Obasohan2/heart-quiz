@@ -56,7 +56,7 @@ Heart Quiz Game is a kind of educative quiz game center on current affairs hereb
 <h3>To Deploy the site using GitHub Pages:</h3>
 <ol>
 <li>Login (or signup) to Github.</li>
-<li>Go to the repository for this project, obasohan2/dreams-practical.</li>
+<li>Go to the repository for this project, https://github.com/Obasohan2/heart-quiz.</li>
 <li>Click the settings button.</li>
 <li>Select pages in the left hand navigation menu.</li>
 <li>From the source dropdown select main branch and press save.</li>
