@@ -5,48 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <!-- favicon and google fonts -->
-    <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico'/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Lato:wght@300;400&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    
-   
-     <!-- the css style link -->
+    <!-- favicon -->
+    <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico' />
+
+    <!-- the css style link -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Heart Quiz Game</title>
 </head>
 
 <body>
-     <!--heading and logo -->
+    <!--heading and logo -->
+    <a href="index.html">
     <h1 class="heading">
-        <img class="logo" src="assets/images/logo.png" alt="logo">Heart Quiz Game
+        <img class="logo" src="assets/images/logo.png" alt="logo"> Heart Quiz Game
     </h1>
+</a>
 
-     <!--quiz container -->
-    <div class="app">
+    <!--quiz container -->
+    <div class="container">
         <h1>Test Quiz</h1>
 
-     <!-- quiz game area -->
-        <div class="quiz">
+        <!-- quiz game area -->
+        <div class="game-area">
 
             <!---quiz question head-->
-            <h2 id="question">Your question goes here</h2>
+            <h2 id="question">Q</h2>
             <div id="answer-buttons">
                 <button class="btn">Answer1</button>
                 <button class="btn">Answer2</button>
                 <button class="btn">Answer3</button>
-                <button class="btn">Answer4</button>
-
-                 <!-- next button for quiz question  -->
+                <button class="btn">Answer4</button>  
             </div>
+            <!-- next button for quiz question  -->
             <button id="next-btn">Next</button>
         </div>
     </div>
 
 
 
- <!-- javascripts link -->
+    <!-- javascripts link -->
     <script src="assets/js/script.js"></script>
 </body>
 
